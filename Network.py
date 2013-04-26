@@ -4,7 +4,10 @@ class Network:
    soc = None
    addr = None
    port = 0
+   family = None
    error = None
+
+   # -- TCP
 
    def tcp_connect(self):
 
@@ -25,6 +28,8 @@ class Network:
 	    self.close()
 	    self.soc = None
 	    continue
+
+	 self.family = family
 
 	 break
 
@@ -53,4 +58,3 @@ class Network:
 	 return 0
 
       return 1
-
